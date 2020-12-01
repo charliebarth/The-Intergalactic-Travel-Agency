@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :planets
-  resources :visits
+  resources :planets only: [:index, :show]
+  resources :visits only: [:index, :show]
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  resources :users, only: [:show] do
+    resources :visits
+  end
+ 
+  root 'users#create'
 end
