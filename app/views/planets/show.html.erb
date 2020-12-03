@@ -1,0 +1,4 @@
+<h1><%= @planet.name %></h1>
+
+<%= button_to  "Go to this Planet", user_visits_path, params: {planet_id: @planet.id}%>
+
