@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :planets, only: [:index, :show]
   resources :visits, only: [:index, :show]
   
   resources :users, only: [:show] do
-    resources :visits
+    resources :visits, only: [:new, :create, :index, :show, :edit, :update]
   end
  
-  root 'users#create'
+  root 'sessions#welcome'
+  
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy', as: 'logout'
+  get 'welcome', to: 'sessions#welcome'
+
 end
