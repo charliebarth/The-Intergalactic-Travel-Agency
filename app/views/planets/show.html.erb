@@ -1,4 +1,6 @@
 <h1><%= @planet.name %></h1>
 
-<%= button_to  "Go to this Planet", user_visits_path, params: {planet_id: @planet.id}%>
+<%= link_to  "Go to this Planet", new_user_visit_path(@current_user, :planet_id => @planet.id, :private? => false)%>
+<br>
+<%=link_to "See Your Info", user_path(@current_user)%>
 

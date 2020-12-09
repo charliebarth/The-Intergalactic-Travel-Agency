@@ -2,7 +2,9 @@
 <ul>
   <% @planets.each do |pl|%>
     <li> 
-        <%= link_to "Visit #{pl.name}", planet_path(pl) %>
+        <%= link_to "#{pl.name}", planet_path(pl) %>
     </li>
   <% end %>
 </ul>
+<br>
+<%=link_to "See Your Info", user_path(@current_user)%>
