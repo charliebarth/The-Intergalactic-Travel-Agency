@@ -1,0 +1,6 @@
+<% if flash[:message] %>
+  <div class="message-container">
+    <p class="message-text"><%= flash[:message] %></p>
+  </div>
+  <%flash[:message].clear%>
+<% end %>
