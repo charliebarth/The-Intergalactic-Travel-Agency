@@ -1,24 +1,19 @@
-# README
+# The-Intergalactic-Travel-Agency
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails application that is used to users and visit planets around the solar system. This is a simple app that allows to sign up and login and then select planets you would like to visit. You are also able to view visits made by other users.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# Usage and Setup
 
-* Configuration
+To install the app simply fork and clone this repository from Github onto your local device.
 
-* Database creation
+To setup the app, run bundle install, 'rails db:migrate', 'rails db:seed' and then run 'rails s'. Everything should be set up!
 
-* Database initialization
+# Contibutor's Guide
 
-* How to run the test suite
+You are welcome to provide feedback and submit bug reports at https://github.com/charliebarth/The-Intergalactic-Travel-Agency. Thank you for any feedback!
 
-* Services (job queues, cache servers, search engines, etc.)
+# License
 
-* Deployment instructions
-
-* ...
+The app is available as open source under the terms of the MIT License. https://opensource.org/licenses/MIT
