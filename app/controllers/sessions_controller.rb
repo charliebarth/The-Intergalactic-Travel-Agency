@@ -15,13 +15,15 @@ class SessionsController < ApplicationController
     end
   end
 
-  #def github_login
-    #if auth_hash = request.env["omniauth.auth"]
-      #@user = User.find_or_create_by_omniauth(auth_hash)
-      #session[:user_id] = @user.id
-      #redirect_to user_path(@user)
-    #end
-  #end
+  def google_login
+    user_name = request.env['omniauth.auth']['info']['name']
+    @user = User.find_or_create_by(user_name: user_name) do |user|
+        user.user_name = user_name
+        user.password = SecureRandom.hex
+    end
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
+  end
 
   def destroy
     session.delete :user_id
