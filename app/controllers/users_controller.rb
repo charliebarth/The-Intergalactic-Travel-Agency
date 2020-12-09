@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     def edit
       unless helpers.has_access
         flash[:message] = "You do not have access to Edit this User"
-        render "partials/error"
+        render 'partials/flash_messages'
       end
     end
   
@@ -34,8 +34,9 @@ class UsersController < ApplicationController
     end
 
     def destroy
-       user.destroy
-       redirect_to root_path
+      @user.visits.destroy
+      @user.destroy
+      redirect_to root_path
     end
   
     private
