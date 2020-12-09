@@ -1,0 +1,14 @@
+<h1>All Visits</h1>
+<% @visits.each do |vs| %>
+    <%user = User.find_by_id(vs.user_id)%>
+    <%planet = Planet.find_by_id(vs.planet_id)%>
+    <p>User: <%= user.user_name %> <br>Destination: <%= planet.name %></p>
+    <% if @show_private_status = true %>
+    <p>Private Status: <%= vs.private %></p>
+    <br>
+    <% end %>
+<% end %>
+<br>
+<%=link_to "See Your Info", user_path(@current_user)%>
+<br>
+<%= link_to  "See Planets", planets_path %>

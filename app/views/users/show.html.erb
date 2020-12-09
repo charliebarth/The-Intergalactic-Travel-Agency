@@ -1,1 +1,23 @@
-<%= render partial: "form", locals: {title: "Your Info", user: @user} %>
+<h1>Username: <%= @current_user.user_name %></h1>
+<br><br>
+<%= render partial: 'partials/flash_messages' %>
+<br><br>
+<p>User Bio: <%= @current_user.bio%></p>
+<br><br>
+<p>Planets You Have Visited:</p>
+<% @current_user.planets.each do |pl|%>
+  <%= pl.name%>
+  <br>
+<% end %>
+<br>
+
+<%= link_to  "Edit Your Info", edit_user_path(@current_user) %>
+<br>
+<%= link_to  "See Planets", planets_path %>
+<br>
+<%= link_to  "See Your Visits", user_visits_path(@current_user) %>
+<br>
+<%= link_to  "See All Visits", visits_path %>
+<br>
+<%= button_to  "Logout", logout_path(:user_id => @current_user.id) %>
+

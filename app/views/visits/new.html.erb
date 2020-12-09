@@ -1,0 +1,15 @@
+<%= render partial: "partials/error_messages", locals: { model: @visit } %>
+<%= form_for @visit do |f| %>
+
+  <%= f.label :user_id %> <br>
+  <%= f.number_field :user_id, placeholder: "user_id", :class => 'numberField' , value: @visit.user_id%> <br><br>
+
+  <%= f.label :planet_id %> <br>
+  <%= f.number_field :planet_id, placeholder: "planet_id", :class => 'numberField' , value: @visit.planet_id %> <br><br>
+
+  <%= f.label :private? %> <br>
+  <%= f.select(:private, options_for_select(@private_options)) %> <br><br>
+
+  <%= f.submit %>
+<% end %>
+
