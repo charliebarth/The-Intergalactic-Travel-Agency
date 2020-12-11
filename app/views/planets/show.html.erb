@@ -1,8 +1,7 @@
-<h1><%= @planet.name %></h1>
+<header><h1><%= @planet.name %></h1></header>
+<div class= "box-3">
 <p>Size: <%=@planet.size%></p>
 <p>Description: <%=@planet.description%></p>
 
 <%= link_to  "Go to this Planet", new_user_visit_path(@current_user, :planet_id => @planet.id, :private => false)%>
-<br>
-<%=link_to "See Your Info", user_path(@current_user)%>
-
+</div>

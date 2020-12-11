@@ -1,10 +1,9 @@
-<h1>All Planets</h1>
-<ul>
-  <% @planets.each do |pl|%>
-    <li> 
-        <%= link_to "#{pl.name}", planet_path(pl) %>
-    </li>
-  <% end %>
-</ul>
+<header><h1>All Planets</h1></header>
+<div class= "box-3">
+<% @planets.each do |pl|%>
+  <%= link_to "#{pl.name}", planet_path(pl) %>
+  <br>
+<% end %>
 <br>
-<%=link_to "See Your Info", user_path(@current_user)%>
+</div>
+

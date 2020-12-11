@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheIntergalacticTravelAgency</title>
+    <title>The Intergalactic Travel Agency</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,17 @@
   </head>
 
   <body>
+
     <%= yield %>
   </body>
+  <footer>
+  <div class= "box-1">
+    <% if authenticated %>
+      <%=link_to "See Your Info", user_path(current_user)%>
+      <%= link_to  "See All Visits", visits_path %>
+      <%= link_to  "See Planets", planets_path %>
+      <%= button_to  "Logout", logout_path(:user_id => current_user.id) %>
+    <%end%>
+  </div>
+  </footer>
 </html>

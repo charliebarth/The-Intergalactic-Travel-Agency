@@ -23,6 +23,7 @@ class VisitsController < ApplicationController
         @visits = User.find(params[:user_id]).visits
 
       else
+        @show_private_status = false
         @visits = Visit.not_private
       end
     end
